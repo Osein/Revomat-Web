@@ -85,3 +85,7 @@ test-output
 node_modules/
 
 vite.config.*.timestamp*
+
+# Nx graph output
+static/
+project-graph.html
