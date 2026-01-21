@@ -3,7 +3,7 @@
 ## What You Have
 
 A complete Nx monorepo with:
-- ✅ **revomat-web**: Next.js 16 app with React 19
+- ✅ **revomat-web**: React (CSR) app with Vite + React 19
 - ✅ **revomat-app**: React Native app
 - ✅ **design-system**: Shared library used by both apps
 - ✅ **Package-based version management**: Different React versions working together
@@ -22,11 +22,11 @@ nx build design-system
 
 ### 3. Run Your Apps
 
-#### Web App (Next.js)
+#### Web App (React + Vite)
 ```bash
-nx serve revomat-web
+nx run @revomat/revomat-web:dev
 ```
-Then open http://localhost:4200
+Then open http://localhost:3000
 
 You'll see:
 - A welcome page with the design system components
@@ -127,8 +127,7 @@ const styles = StyleSheet.create({
 ```json
 {
   "dependencies": {
-    "react": "^19.0.0",
-    "next": "~16.0.1"
+    "react": "^19.0.0"
   }
 }
 ```
@@ -197,7 +196,8 @@ nx run-many -t build
 ## 📚 File Locations
 
 ### Web App Example
-- Main page: `apps/revomat-web/src/app/page.tsx`
+- Main entry: `apps/revomat-web/src/main.tsx`
+- Root component: `apps/revomat-web/src/App.tsx`
 - Uses: `Button`, `Typography`, `theme` from design system
 
 ### Mobile App Example

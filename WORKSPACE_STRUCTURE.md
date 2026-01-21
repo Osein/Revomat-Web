@@ -5,14 +5,15 @@
 ```
 Revomat-Web/
 ├── apps/
-│   ├── revomat-web/              # Next.js Web Application
+│   ├── revomat-web/              # React (CSR) Web Application
+│   │   ├── index.html
 │   │   ├── src/
-│   │   │   └── app/
-│   │   │       ├── page.tsx      # Uses design system components
-│   │   │       ├── layout.tsx
-│   │   │       └── global.css
+│   │   │   ├── App.tsx           # Root component
+│   │   │   ├── main.tsx          # Entry point
+│   │   │   └── global.css
 │   │   ├── package.json          # React 19.0.0
-│   │   ├── next.config.js
+│   │   ├── project.json
+│   │   ├── vite.config.mts
 │   │   └── tsconfig.json
 │   │
 │   ├── revomat-app/              # React Native Mobile Application
@@ -52,7 +53,7 @@ Revomat-Web/
 ```
 ┌─────────────────────┐
 │  revomat-web        │
-│  (Next.js + React 19)│
+│  (React + Vite + 19) │
 └──────────┬──────────┘
            │
            │ imports
@@ -77,7 +78,7 @@ Revomat-Web/
 This workspace uses a **package-based** approach instead of an integrated approach because:
 
 1. **Different React Versions**: 
-   - Next.js 16 requires React 19
+   - Web app uses React 19
    - React Native uses its own React version
    - Package-based allows each app to specify its own React version
 
@@ -125,7 +126,7 @@ This workspace uses a **package-based** approach instead of an integrated approa
 
 ## 🎨 Design System Usage
 
-### In Next.js (Web)
+### In React (Web)
 ```typescript
 import { Button, Typography, theme } from '@revomat/design-system';
 
@@ -160,7 +161,7 @@ const styles = StyleSheet.create({
 nx build design-system
 
 # Build web app
-nx build revomat-web
+nx run @revomat/revomat-web:build
 
 # Build all
 nx run-many -t build
@@ -169,7 +170,7 @@ nx run-many -t build
 ### Serve
 ```bash
 # Serve web app
-nx serve revomat-web
+nx run @revomat/revomat-web:dev
 
 # Serve mobile app (web version)
 nx serve revomat-app
@@ -205,7 +206,7 @@ nx show project @revomat/design-system
 ## ✅ Verification Checklist
 
 - [x] Nx workspace initialized
-- [x] Next.js app created (`revomat-web`)
+- [x] React (Vite) app created (`revomat-web`)
 - [x] React Native app created (`revomat-app`)
 - [x] Design system library created
 - [x] Package-based structure configured
