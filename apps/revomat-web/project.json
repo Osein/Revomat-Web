@@ -1,0 +1,32 @@
+{
+  "name": "@revomat/revomat-web",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/revomat-web/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/revomat-web",
+        "configFile": "apps/revomat-web/vite.config.mts"
+      }
+    },
+    "dev": {
+      "executor": "@nx/vite:dev-server",
+      "options": {
+        "buildTarget": "@revomat/revomat-web:build",
+        "configFile": "apps/revomat-web/vite.config.mts"
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "options": {
+        "buildTarget": "@revomat/revomat-web:build",
+        "configFile": "apps/revomat-web/vite.config.mts"
+      }
+    }
+  }
+}
+

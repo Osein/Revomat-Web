@@ -6,9 +6,9 @@ A package-based Nx monorepo containing web and mobile applications with a shared
 
 ### Applications
 
-- **revomat-web** - Next.js web application (React 19)
+- **revomat-web** - React (CSR) web application (Vite + React 19)
   - Location: `apps/revomat-web`
-  - Framework: Next.js 16
+  - Framework: React + Vite
   - React Version: 19.0.0
 
 - **revomat-app** - React Native mobile application
@@ -47,12 +47,12 @@ nx build design-system
 
 ### Run Applications
 
-#### Web Application (Next.js)
+#### Web Application (React + Vite)
 ```bash
-nx serve revomat-web
+nx run @revomat/revomat-web:dev
 ```
 
-Visit http://localhost:4200
+Visit http://localhost:3000
 
 #### Mobile Application (React Native)
 
@@ -120,7 +120,7 @@ nx graph
 ## 📝 Package Versions
 
 This workspace allows different React versions:
-- **revomat-web**: Uses React 19 (required by Next.js 16)
+- **revomat-web**: Uses React 19
 - **revomat-app**: Uses React version bundled with React Native
 - **design-system**: Accepts React >=18.0.0 as peer dependency
 
@@ -133,9 +133,9 @@ This is possible because we use a package-based monorepo structure where each pr
 nx g @nx/js:library my-lib --directory=libs/my-lib
 ```
 
-### Add a new Next.js app
+### Add a new React (Vite) app
 ```bash
-nx g @nx/next:application my-app --directory=apps/my-app
+nx g @nx/react:application my-app --directory=apps/my-app --bundler=vite
 ```
 
 ### Add a new React Native app
@@ -146,5 +146,5 @@ nx g @nx/react-native:application my-app --directory=apps/my-app
 ## 📖 Learn More
 
 - [Nx Documentation](https://nx.dev)
-- [Next.js Documentation](https://nextjs.org/docs)
+- [Vite Documentation](https://vite.dev)
 - [React Native Documentation](https://reactnative.dev/docs/getting-started)
