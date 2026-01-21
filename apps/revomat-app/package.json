@@ -1,0 +1,21 @@
+{
+  "name": "@revomat/revomat-app",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@react-native/metro-config": "*",
+    "react": "*",
+    "react-native": "*",
+    "react-native-svg": "*",
+    "metro-config": "*",
+    "@revomat/design-system": "*",
+    "react-native-svg-transformer": "*",
+    "@nx/rollup": "*",
+    "react-dom": "*",
+    "vite": "*",
+    "@vitejs/plugin-react": "*",
+    "@nx/vite": "*",
+    "esbuild": "*"
+  },
+  "devDependencies": {}
+}

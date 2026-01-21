@@ -1,0 +1,37 @@
+{
+  "name": "@revomat/revomat-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/revomat-app/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "run-ios": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["pod-install"],
+      "options": {
+        "cwd": "apps/revomat-app",
+        "command": "react-native run-ios --simulator \"iPhone 16 Pro\""
+      },
+      "configurations": {
+        "device": {
+          "command": "react-native run-ios --device"
+        },
+        "release": {
+          "command": "react-native run-ios --simulator \"iPhone 16 Pro\" --mode Release"
+        }
+      }
+    },
+    "run-android": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/revomat-app",
+        "command": "react-native run-android"
+      },
+      "configurations": {
+        "release": {
+          "command": "react-native run-android --mode release"
+        }
+      }
+    }
+  }
+}
