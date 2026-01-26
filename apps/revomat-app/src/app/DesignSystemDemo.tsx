@@ -1,33 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-import { theme, getColor, getSpacing, getFontSize, getBorderRadius } from '@revomat/design-system';
-
-// React Native Button component using design system
-interface ButtonProps {
-  title: string;
-  variant?: 'primary' | 'secondary' | 'outline';
-  onPress?: () => void;
-}
-
-const DSButton: React.FC<ButtonProps> = ({ title, variant = 'primary', onPress }) => {
-  const buttonStyles = [
-    styles.button,
-    variant === 'primary' && styles.buttonPrimary,
-    variant === 'secondary' && styles.buttonSecondary,
-    variant === 'outline' && styles.buttonOutline,
-  ];
-
-  const textStyles = [
-    styles.buttonText,
-    variant === 'outline' && styles.buttonTextOutline,
-  ];
-
-  return (
-    <TouchableOpacity style={buttonStyles} onPress={onPress}>
-      <Text style={textStyles}>{title}</Text>
-    </TouchableOpacity>
-  );
-};
+import { Button, theme, getColor, getSpacing, getFontSize, getBorderRadius } from '@revomat/design-system';
 
 // React Native Typography component using design system
 interface TypographyProps {
@@ -62,23 +35,29 @@ export const DesignSystemDemo: React.FC = () => {
       </DSTypography>
 
       <View style={styles.buttonContainer}>
-        <DSButton 
-          title="Primary Button" 
-          variant="primary" 
+        <Button
+          variant="primary"
+          fullWidth
           onPress={() => Alert.alert('Primary', 'Primary button pressed!')}
-        />
-        
-        <DSButton 
-          title="Secondary Button" 
-          variant="secondary" 
+        >
+          Primary Button
+        </Button>
+
+        <Button
+          variant="secondary"
+          fullWidth
           onPress={() => Alert.alert('Secondary', 'Secondary button pressed!')}
-        />
-        
-        <DSButton 
-          title="Outline Button" 
-          variant="outline" 
+        >
+          Secondary Button
+        </Button>
+
+        <Button
+          variant="outline"
+          fullWidth
           onPress={() => Alert.alert('Outline', 'Outline button pressed!')}
-        />
+        >
+          Outline Button
+        </Button>
       </View>
 
       <View style={styles.colorPalette}>

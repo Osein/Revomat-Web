@@ -15,7 +15,8 @@
     "vite": "*",
     "@vitejs/plugin-react": "*",
     "@nx/vite": "*",
-    "esbuild": "*"
+    "esbuild": "*",
+    "tamagui": "*"
   },
   "devDependencies": {}
 }

@@ -11,12 +11,14 @@
     ".": {
       "@revomat/workspace": "./src/index.ts",
       "types": "./dist/index.esm.d.ts",
-      "import": "./dist/index.esm.js",
-      "default": "./dist/index.esm.js"
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
     }
   },
   "peerDependencies": {
     "react": ">=18.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "tamagui": "^1.0.0"
+  }
 }
